@@ -7,11 +7,10 @@ fi
 
 if [ ! -f /conf/zoo.cfg ] ; then
   echo 'Waiting for config file to appear...'
-  while [ ! -f /conf/zoo.cfg ] ; do
+  while [ ! -f /zoo/conf/zoo.cfg ] ; do
     sleep 1
   done
-  echo 'Config file found, linking it.'
-  ln -s /conf/zoo.cfg /zoo/conf/zoo.cfg
+  echo 'Config file found, starting server.'
 fi
 
 mkdir -p /var/lib/zookeeper
