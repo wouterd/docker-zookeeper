@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo 'Pulling all images needed, just to be sure'
 docker pull busybox
 docker pull wouterd/zookeeper
