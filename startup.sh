@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# build the containers
-docker build -t wouterd/zookeeper zookeeper/
-
 # Need a volume to read the config from
 conf_container=$(docker run -d -v /conf busybox)
 
