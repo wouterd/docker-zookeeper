@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo 'Pulling all images needed, just to be sure'
+docker pull busybox
+docker pull wouterd/zookeeper
+docker pull wouterd/kafka
+
 # Need a volume to read the config from
 conf_container=$(docker run -d -v /conf busybox)
 
