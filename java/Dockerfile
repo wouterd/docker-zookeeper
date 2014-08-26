@@ -12,3 +12,7 @@ RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" >> 
   echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java7-installer oracle-java7-set-default
+
+#Clean up apt-repository
+RUN apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
